@@ -1,0 +1,61 @@
+.category-card {
+  position: relative;
+  height: 500px;
+  cursor: pointer;
+  overflow: hidden;
+  &:hover {
+    .category_overlay {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    .category_image {
+      transform: scale(1.07);
+    }
+    .category_button {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+}
+
+.category_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.534);
+  transition: all 0.5s ease;
+}
+
+.category_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.category_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.category_name {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.category_button {
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  font-size: 0.8rem;
+  transition: all 0.5s ease;
+}

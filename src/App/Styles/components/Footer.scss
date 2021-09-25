@@ -1,0 +1,26 @@
+.footer {
+  padding-top: 30px;
+  background-color: $background-color;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
+
+  .logo_img {
+    margin-right: 10px;
+    color: $primary-color;
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  .logo_name {
+    font-size: 1.2rem;
+  }
+}

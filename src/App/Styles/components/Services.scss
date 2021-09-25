@@ -1,0 +1,15 @@
+.services {
+  padding: 50px 0;
+  text-align: center;
+  .services_header {
+    margin-bottom: 50px;
+    &::after {
+      content: "";
+      width: 10%;
+      height: 2px;
+      margin: auto;
+      display: block;
+      background-color: $primary-color;
+    }
+  }
+}

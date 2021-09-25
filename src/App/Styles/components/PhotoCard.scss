@@ -1,0 +1,32 @@
+.photo-card {
+  position: relative;
+  margin: 20px 0;
+  cursor: zoom-in;
+  border-radius: 5px;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+  }
+  &.show {
+    animation: showUp 1.5s ease;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

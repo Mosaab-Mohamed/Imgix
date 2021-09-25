@@ -1,0 +1,183 @@
+.my-navbar {
+  position: relative;
+  padding: 15px 0;
+  background-color: $background-color;
+  box-shadow: 0 3px 5px rgb(200, 200, 200);
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
+
+  .logo_img {
+    margin-right: 10px;
+    color: $primary-color;
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  .logo_name {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggler {
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    cursor: pointer;
+    &.not-active:hover {
+      .menu-toggler_bar:nth-child(2),
+      .menu-toggler_bar:nth-child(3) {
+        width: 100%;
+      }
+    }
+    &.active {
+      .menu-toggler_bar:nth-child(2) {
+        display: none;
+      }
+      .menu-toggler_bar:nth-child(1) {
+        width: 70%;
+        transform: rotateZ(45deg);
+        transform-origin: left;
+        background-color: $primary-color;
+      }
+      .menu-toggler_bar:nth-child(3) {
+        width: 70%;
+        transform: rotateZ(-45deg);
+        transform-origin: left;
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  .menu-toggler_bar {
+    width: 100%;
+    height: 3px;
+    background-color: gray;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    &:nth-child(2) {
+      width: 70%;
+    }
+    &:nth-child(3) {
+      width: 40%;
+    }
+  }
+
+  %reset-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+    @include md-screen {
+      display: block;
+      position: absolute;
+      z-index: 1000;
+      left: -60%;
+      top: 100%;
+      width: 40%;
+      height: 100vh;
+      text-align: center;
+      background-color: $background-color;
+      border-top: 2px solid $primary-color;
+      box-shadow: 3px 5px 3px rgba(0, 0, 0, 0.404);
+      &.active {
+        left: 0;
+        animation: bouncing 0.7s ease-in-out;
+      }
+    }
+    @include xs-screen {
+      width: 60%;
+    }
+  }
+
+  .main-menu {
+    @extend %reset-ul;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    @include md-screen {
+      display: block;
+      padding: 15px 0;
+    }
+  }
+
+  .main-menu_item {
+    margin: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: black;
+    @include md-screen {
+      display: block;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(179, 179, 179, 0.479);
+    }
+    &:hover {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+    &.active {
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+
+  .menu-social {
+    @extend %reset-ul;
+    display: flex;
+    @include md-screen {
+      justify-content: center;
+    }
+  }
+
+  .menu-social_item {
+    margin: 0 10px;
+
+    a {
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 1;
+        transform: scaleX(1.5);
+      }
+    }
+    &:nth-child(1) a {
+      color: #0676e8;
+    }
+    &:nth-child(2) a {
+      color: #1a91da;
+    }
+    &:nth-child(3) a {
+      color: #e1306c;
+    }
+    &:nth-child(4) a {
+      color: #ff0000;
+    }
+  }
+
+  @keyframes bouncing {
+    0% {
+      left: -60%;
+    }
+    80% {
+      left: 5%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+}

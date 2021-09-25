@@ -1,0 +1,16 @@
+.gallery {
+  padding: 50px 0;
+}
+
+.gallery_header {
+  padding: 30px 0;
+  text-align: center;
+  &::after {
+    content: "";
+    width: 10%;
+    height: 2px;
+    margin: auto;
+    display: block;
+    background-color: $primary-color;
+  }
+}
